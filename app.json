@@ -9,16 +9,6 @@
       "output": "static",
       "favicon": "./assets/favicon.png"
     },
-    "plugins": [
-      "expo-router",
-      [
-        "expo-dev-launcher",
-        {
-          "launchMode": "most-recent"
-        }
-      ],
-      "expo-secure-store"
-    ],
     "experiments": {
       "typedRoutes": true,
       "tsconfigPaths": true
@@ -44,6 +34,33 @@
         "backgroundColor": "#ffffff"
       },
       "package": "com.emrecolak.mobilestarterpack"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-dev-launcher",
+        {
+          "launchMode": "most-recent"
+        }
+      ],
+      "expo-secure-store",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "kotlinVersion": "1.7.22"
+          },
+          "ios": {
+            "useFrameworks": "static",
+            "minimumOSVersion": "16.0"
+          }
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "mobile-starter-pack"
+      }
     }
   }
 }
